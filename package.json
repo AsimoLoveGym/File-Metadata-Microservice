@@ -1,0 +1,23 @@
+{
+  "name": "file-metadata-microservice",
+  "version": "1.0.0",
+  "description": "for free code camp api practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsimoLoveGym/File-Metadata-Microservice.git"
+  },
+  "author": "Joey Xia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AsimoLoveGym/File-Metadata-Microservice/issues"
+  },
+  "homepage": "https://github.com/AsimoLoveGym/File-Metadata-Microservice",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
+  }
+}
