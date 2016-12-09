@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AsimoLoveGym/File-Metadata-Microservice",
   "dependencies": {
     "express": "^4.14.0",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "multer": "^1.2.0"
   }
 }

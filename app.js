@@ -1,4 +1,6 @@
 var express = require('express');
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
 var app = express();
 
 var handlebars = require('express-handlebars').create({ defaultLayout: null });
@@ -13,15 +15,16 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-app.get('/api/search?*', function (req, res) {
-  var outPutJson = {};
+app.post('/fileinfo', upload.single('avatar'), function (req, res) {
+  var outPutJson = { filesize: req.file.size };
   res.json(outPutJson);
 });
 
-app.get('/api/recent', function (req, res) {
-  var outPutJson = {};
-  res.json(outPutJson);
-});
+// app.post('/upload', upload.single('avatar'),  function (req, res) {
+//   // console.log(req.file.size);
+//   var outPutJson = { filesize: req.file.size };
+//   res.json(outPutJson);
+// });
 
 // custom 404 page
 app.use(function (req, res, next) {

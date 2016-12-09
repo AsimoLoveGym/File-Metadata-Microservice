@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- jQuery Core 3.1.1 minified JavaScript -->
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <!-- Bootstrap Latest compiled and minified JavaScript -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
@@ -34,20 +34,26 @@
                 </ul>
               </div>
 
-              <div class="col-xs-6">
-                <h4 class="text-left">Step 1: upload file</h4>
-                <button type="button" class="btn btn-primary">Choose File</button>
-              </div>
+              <form method="post" action="/fileinfo" enctype="multipart/form-data">
+                <div class="col-xs-6">
+                  <h4 class="text-left">Step 1: upload file</h4>
+                  <label class="btn btn-primary">
+                      Choose File <input type="file" name="avatar" style="display: none;" onchange="$('#upload-file-info').html($(this).val());">
+                  </label>
+                  <span class="label label-info" id="upload-file-info"></span>
+                </div>
 
-              <div class="col-xs-6">
-                <h4 class="text-left">Step 2: get file size</h4>
-                <button type="button" class="btn btn-primary">Get File Size</button>
-              </div>
+                <div class="col-xs-6">
+                  <h4 class="text-left">Step 2: get file size</h4>
+                  <input class="btn btn-primary" type="submit" value="Get File Size"/>
+                </div>
+              </form>
 
               <div class="col-xs-12">
                 <h4 class="text-left">Response Example: </h4>
                 <code>{"filesize":598923}</code>
               </div>
+
 
             </div>
 
